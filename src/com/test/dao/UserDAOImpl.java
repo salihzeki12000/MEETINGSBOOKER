@@ -92,7 +92,7 @@ public class UserDAOImpl {
             }
             valeurAutoGenerees = preparedStatement.getGenerateKeys();
             if (valeurAutoGenerees.next()){
-                utilisateur.setCode(valeurAutoGenerees.getLong(1));
+                utilisateur.setCode(valeurAutoGenerees.getInt(1));
             }
             else{
                 throw new DAOException("Echec UserDAOImpl 2");
@@ -106,7 +106,7 @@ public class UserDAOImpl {
 
     private static          User map(ResultSet resultSet) throws SQLException{
         User    utilisateur = new User();
-        utilisateur.setCode(resultSet.getInteger('code'));
+        utilisateur.setCode(resultSet.getInt('code'));
         utilisateur.setNom(resultSet.getString('nom'));
         utilisateur.setPrenom(resultSet.getString('prenom'));
         utilisateur.setMail(resultSet.getString('mail'));
