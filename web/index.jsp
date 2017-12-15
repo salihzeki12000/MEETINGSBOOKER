@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$JDRKL
+  $END$
   </body>
 </html>
